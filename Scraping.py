@@ -97,12 +97,12 @@ def mars_facts():
         df = pd.read_html('https://galaxyfacts-mars.com')[0]
 
     except BaseException:
-      return None
+        return None
 
     df.columns = ['Description', 'Mars', 'Earth']
     df.set_index('Description', inplace=True)
 
-    return df.to_html()
+    return df.to_html(classes="table table-striped")
 
 def mars_hemispheres(browser):
         # D1: Scrape High-Resolution Mars’ Hemisphere Images and Titles
